@@ -1,67 +1,68 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { PROJECTS } from '../constants';
 
-const Projects: React.FC = () => {
-  return (
-    <section id="projects" className="py-24 px-4 scroll-mt-20 bg-white relative">
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-          <div>
-            <h2 className="text-3xl font-bold mb-2 text-slate-900">Projetos em Destaque</h2>
-            <p className="text-slate-500">Uma seleção do meu trabalho mais recente no GitHub.</p>
-          </div>
-          <a href="https://github.com/bruno-salzani?tab=repositories" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-semibold hover:underline flex items-center gap-1">
-            Ver tudo no GitHub
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
+export const Projects: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'All' | 'QA' | 'Web'>('All');
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PROJECTS.map((project, idx) => (
-            <div key={idx} className="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col p-6">
-              <div className="flex justify-between items-start mb-4">
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="text-[10px] uppercase font-bold tracking-wider text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
-                      {tag}
-                    </span>
-                  ))}
+  const filteredProjects = PROJECTS.filter(p => activeTab === 'All' || p.category === activeTab);
+
+  return (
+    <div className="w-full">
+      <div className="flex flex-wrap justify-center gap-3 mb-16">
+        {(['All', 'QA', 'Web'] as const).map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-8 py-3 rounded-2xl text-sm font-black transition-all border ${
+              activeTab === tab 
+              ? 'bg-blue-600 border-blue-600 text-white shadow-2xl shadow-blue-600/30 scale-105' 
+              : 'bg-white/5 border-white/10 text-slate-500 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            {tab === 'All' ? 'VER TODOS' : tab === 'QA' ? 'QUALIDADE / QA' : 'DESENVOLVIMENTO WEB'}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredProjects.map((project, idx) => (
+          <a 
+            key={idx}
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex flex-col p-8 rounded-[2rem] bg-[#111114] border border-white/5 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-3 shadow-2xl"
+          >
+            {/* Hover Glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-[2rem]"></div>
+            
+            <div className="relative z-10">
+              <div className="flex justify-between items-start mb-6">
+                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all group-hover:scale-110 shadow-lg ${
+                  project.category === 'QA' ? 'bg-purple-500/10 text-purple-400' : 'bg-blue-500/10 text-blue-400'
+                }`}>
+                  <i className={`ph ${project.category === 'QA' ? 'ph-check-square-offset' : 'ph-brackets-curly'} text-2xl`}></i>
                 </div>
-                <span className="text-xs font-bold text-slate-400 font-mono">
-                  {project.date}
-                </span>
+                <span className="text-[10px] font-black tracking-[0.2em] text-slate-500 bg-white/5 px-4 py-1.5 rounded-full uppercase">{project.date}</span>
               </div>
+
+              <h4 className="text-xl font-black mb-4 text-white group-hover:text-blue-400 transition-colors">
+                {project.title}
+              </h4>
               
-              <div className="flex-grow flex flex-col">
-                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-50">
-                  <a 
-                    href={project.repoUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-sm font-semibold text-slate-900 flex items-center hover:text-blue-600 transition-colors"
-                  >
-                    Ver Código
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                </div>
+              <p className="text-sm text-slate-500 mb-8 line-clamp-2 leading-relaxed">
+                Repositório com implementações modernas e foco em {project.category === 'QA' ? 'estratégias de teste automatizado' : 'arquitetura de software web'}.
+              </p>
+              
+              <div className="mt-auto flex items-center text-xs font-black tracking-widest text-slate-400 group-hover:text-blue-400 transition-all uppercase">
+                Explorar Código
+                <i className="ph ph-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
               </div>
             </div>
-          ))}
-        </div>
+          </a>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
-
-export default Projects;

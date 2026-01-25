@@ -1,31 +1,21 @@
 
 export interface Project {
   title: string;
-  description: string;
-  repoUrl: string;
-  demoUrl?: string;
-  date: string; // Format MM/YY
-  tags: string[];
-  thumbnail: string;
-}
-
-export interface Course {
   date: string;
-  title: string;
-  institution: string;
+  link: string;
+  category: 'QA' | 'Web' | 'Other';
+  description?: string;
 }
 
-export interface StudyCategory {
-  id: string;
+export interface Certification {
   title: string;
-  courses: Course[];
+  date: string;
+  issuer: string;
+  link: string;
+  category: string;
 }
 
-export interface EducationItem {
-  id: string;
-  title: string;
-  institution: string;
-  duration: string;
-  description: string;
-  topics: string[];
+export interface Technology {
+  name: string;
+  icon?: string;
 }
