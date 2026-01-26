@@ -20,7 +20,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center pt-24 pb-16 px-4 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center pt-24 pb-16 px-4 overflow-hidden" aria-label="Introdução">
       {/* Elementos de Fundo com Blur Dinâmico */}
       <div className="absolute top-[15%] right-[5%] -z-10 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[150px]"></div>
       <div className="absolute bottom-[10%] left-[5%] -z-10 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[120px]"></div>
@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
         {/* Esquerda: Conteúdo */}
         <div className="order-2 lg:order-1 text-center lg:text-left flex flex-col items-center lg:items-start">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white/5 border border-white/10 text-slate-300 text-xs font-bold uppercase tracking-widest mb-8 animate-in fade-in slide-in-from-left-4 duration-1000">
-            <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+            <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse" aria-hidden="true"></span>
             7+ Anos de Experiência em Tecnologia
           </div>
           
@@ -48,7 +48,9 @@ export const Hero: React.FC = () => {
             <a 
               href="https://www.linkedin.com/in/brunosalzani" 
               target="_blank" 
+              rel="noopener noreferrer"
               className="group flex items-center gap-3 px-8 py-4 bg-white text-black rounded-2xl font-black transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-white/10"
+              title="Conectar com Bruno Salzani no LinkedIn"
             >
               <i className="ph ph-linkedin-logo text-2xl"></i>
               CONECTAR
@@ -89,16 +91,17 @@ export const Hero: React.FC = () => {
               <div className="w-full h-full overflow-hidden rounded-[2.5rem]">
                 <img 
                   src="https://avatars.githubusercontent.com/u/61254239?v=4" 
-                  alt="Bruno Salzani" 
+                  alt="Foto de perfil de Bruno Salzani - QA e Web Developer" 
                   className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                  loading="eager"
                 />
               </div>
               
               {/* Badges Flutuantes */}
-              <div className="absolute -right-6 top-1/4 glass p-4 rounded-2xl border border-white/20 shadow-2xl animate-bounce hidden md:block" style={{animationDuration: '4s'}}>
+              <div className="absolute -right-6 top-1/4 glass p-4 rounded-2xl border border-white/20 shadow-2xl animate-bounce hidden md:block" style={{animationDuration: '4s'}} aria-hidden="true">
                 <i className="ph ph-bug text-3xl text-purple-400"></i>
               </div>
-              <div className="absolute -left-6 bottom-1/4 glass p-4 rounded-2xl border border-white/20 shadow-2xl animate-bounce hidden md:block" style={{animationDuration: '5s'}}>
+              <div className="absolute -left-6 bottom-1/4 glass p-4 rounded-2xl border border-white/20 shadow-2xl animate-bounce hidden md:block" style={{animationDuration: '5s'}} aria-hidden="true">
                 <i className="ph ph-globe text-3xl text-blue-400"></i>
               </div>
             </div>
@@ -107,7 +110,7 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Indicador de Scroll */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-slate-500 opacity-40">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-slate-500 opacity-40" aria-hidden="true">
         <div className="w-6 h-10 border-2 border-slate-700 rounded-full flex justify-center p-1">
           <div className="w-1 h-2 bg-slate-500 rounded-full animate-bounce"></div>
         </div>

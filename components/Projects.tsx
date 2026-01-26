@@ -3,14 +3,14 @@ import React, { useState } from 'react';
 import { PROJECTS } from '../constants';
 
 export const Projects: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'All' | 'QA' | 'Web'>('All');
+  const [activeTab, setActiveTab] = useState<'All' | 'QA' | 'Web' | 'Other'>('All');
 
   const filteredProjects = PROJECTS.filter(p => activeTab === 'All' || p.category === activeTab);
 
   return (
     <div className="w-full">
       <div className="flex flex-wrap justify-center gap-3 mb-16">
-        {(['All', 'QA', 'Web'] as const).map((tab) => (
+        {(['All', 'QA', 'Web', 'Other'] as const).map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
@@ -20,7 +20,7 @@ export const Projects: React.FC = () => {
               : 'bg-white/5 border-white/10 text-slate-500 hover:text-white hover:bg-white/10'
             }`}
           >
-            {tab === 'All' ? 'VER TODOS' : tab === 'QA' ? 'QUALIDADE / QA' : 'DESENVOLVIMENTO WEB'}
+            {tab === 'All' ? 'VER TODOS' : tab === 'QA' ? 'QUALIDADE / QA' : tab === 'Web' ? 'DESENVOLVIMENTO WEB' : 'OUTROS'}
           </button>
         ))}
       </div>
@@ -40,9 +40,15 @@ export const Projects: React.FC = () => {
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-6">
                 <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all group-hover:scale-110 shadow-lg ${
-                  project.category === 'QA' ? 'bg-purple-500/10 text-purple-400' : 'bg-blue-500/10 text-blue-400'
+                  project.category === 'QA' ? 'bg-purple-500/10 text-purple-400' : 
+                  project.category === 'Web' ? 'bg-blue-500/10 text-blue-400' : 
+                  'bg-emerald-500/10 text-emerald-400'
                 }`}>
-                  <i className={`ph ${project.category === 'QA' ? 'ph-check-square-offset' : 'ph-brackets-curly'} text-2xl`}></i>
+                  <i className={`ph ${
+                    project.category === 'QA' ? 'ph-check-square-offset' : 
+                    project.category === 'Web' ? 'ph-brackets-curly' : 
+                    'ph-cube'
+                  } text-2xl`}></i>
                 </div>
                 <span className="text-[10px] font-black tracking-[0.2em] text-slate-500 bg-white/5 px-4 py-1.5 rounded-full uppercase">{project.date}</span>
               </div>
@@ -52,7 +58,9 @@ export const Projects: React.FC = () => {
               </h4>
               
               <p className="text-sm text-slate-500 mb-8 line-clamp-2 leading-relaxed">
-                Repositório com implementações modernas e foco em {project.category === 'QA' ? 'estratégias de teste automatizado' : 'arquitetura de software web'}.
+                {project.category === 'QA' ? 'Repositório com implementações modernas e foco em estratégias de teste automatizado.' : 
+                 project.category === 'Web' ? 'Repositório com foco em arquitetura de software web e desenvolvimento full-stack.' : 
+                 'Projeto diversificado explorando novas tecnologias, cibersegurança e desenvolvimento especializado.'}
               </p>
               
               <div className="mt-auto flex items-center text-xs font-black tracking-widest text-slate-400 group-hover:text-blue-400 transition-all uppercase">

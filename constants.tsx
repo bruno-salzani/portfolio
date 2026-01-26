@@ -2,24 +2,34 @@
 import { Project, Certification } from './types';
 
 export const PROJECTS: Project[] = [
-  // QA Projects
+  // 2026
+  { title: "IgniTale - Desenvolvimento de Jogos", date: "02/2026", link: "https://github.com/bruno-salzani/ignitale", category: "Other" },
+  { title: "Automação Mobile - Appium/Cucumber JS (Helios APP DETRAN)", date: "01/2026", link: "https://github.com/bruno-salzani/helios-appium-automation/tree/main", category: "QA" },
+  { title: "SentinelKit - Cibersegurança", date: "01/2026", link: "https://github.com/bruno-salzani/SentinelKit/tree/main", category: "Other" },
+  
+  // 2025
+  { title: "Borges Captações", date: "06/2025", link: "https://github.com/bruno-salzani/borges-captacoes", category: "Web" },
+  { title: "Stargames Informatica", date: "05/2025", link: "https://github.com/bruno-salzani/stargames-informatica", category: "Web" },
+  { title: "Clinica Nova Vida", date: "04/2025", link: "https://github.com/bruno-salzani/clinica-novavida/", category: "Web" },
   { title: "Automação Selenium Java (Leilões)", date: "01/2025", link: "https://github.com/bruno-salzani/automation-selenium-leiloes", category: "QA" },
+  
+  // 2024
   { title: "Automação Cypress JS (Adopet)", date: "12/2024", link: "https://github.com/bruno-salzani/test-cypress-adopet", category: "QA" },
   { title: "Teste de Software - LMS (Neolude)", date: "05/2024", link: "https://github.com/bruno-salzani/manual-test-neolude", category: "QA" },
   { title: "Teste de Software - Natura", date: "03/2024", link: "https://github.com/bruno-salzani/teste-software-funcionalidades-natura", category: "QA" },
   { title: "Automação Cypress JS (Neolude)", date: "02/2024", link: "https://github.com/bruno-salzani/cypress-lms-automation", category: "QA" },
-  { title: "Manual Test APP (Prudential)", date: "12/2023", link: "https://github.com/bruno-salzani/manual-test-prudential", category: "QA" },
   
-  // Web Dev Projects
-  { title: "Borges Captações", date: "06/2025", link: "https://github.com/bruno-salzani/borges-captacoes", category: "Web" },
-  { title: "Stargames Informatica", date: "05/2025", link: "https://github.com/bruno-salzani/stargames-informatica", category: "Web" },
-  { title: "Clinica Nova Vida", date: "04/2025", link: "https://github.com/bruno-salzani/clinica-novavida/", category: "Web" },
+  // 2023
+  { title: "Manual Test APP (Prudential)", date: "12/2023", link: "https://github.com/bruno-salzani/manual-test-prudential", category: "QA" },
   { title: "CSS Minify", date: "04/2023", link: "https://github.com/bruno-salzani/minifycss", category: "Web" },
   { title: "Binary to Decimal", date: "03/2023", link: "https://github.com/bruno-salzani/bin2dec", category: "Web" },
-  { title: "Blog Terceira Idade", date: "08/2021", link: "https://github.com/bruno-salzani/blog-terceira-idade", category: "Web" },
   
-  // Other
-  { title: "SentinelKit - Cyber-Segurança", date: "01/2026", link: "https://github.com/bruno-salzani/SentinelKit/tree/main", category: "Other" },
+  // 2021
+  { title: "Blog Terceira Idade", date: "08/2021", link: "https://github.com/bruno-salzani/blog-terceira-idade", category: "Web" },
+  { title: "Terceira Idade", date: "06/2021", link: "https://github.com/bruno-salzani/terceira-idade", category: "Web" },
+  { title: "HTML Courses", date: "05/2021", link: "https://github.com/bruno-salzani/html-courses", category: "Web" },
+  { title: "HTML Presentation", date: "04/2021", link: "https://github.com/bruno-salzani/html-presentation", category: "Web" },
+  { title: "HTML Barbershop", date: "03/2021", link: "https://github.com/bruno-salzani/html-barbershop", category: "Web" },
 ];
 
 export const CERTIFICATIONS: Certification[] = [
@@ -27,7 +37,7 @@ export const CERTIFICATIONS: Certification[] = [
   { title: "Testes em .NET: integração e entrega contínua com Azure DevOps", date: "01/2025", issuer: "Alura", link: "https://cursos.alura.com.br/certificate/dbf97068-5a4b-424f-8b22-e475ea61cf72?lang", category: "Qualidade de Software" },
   { title: "Carreira QA: processos e automação de testes", date: "12/2022", issuer: "Alura", link: "https://cursos.alura.com.br/degree/certificate/0395f251-befa-43e4-b7f7-3c0158554247", category: "Qualidade de Software" },
   { title: "Quality Assurance: plano de testes e gestão de bugs", date: "11/2022", issuer: "Alura", link: "https://cursos.alura.com.br/certificate/2c8eaa73-b5c0-413c-93de-5457fbab3ef6", category: "Qualidade de Software" },
-  { title: "BDD e Java: Behavior Driven Development com Cucumber", date: "10/2022", issuer: "Alura", link: "https://cursos.alura.com.br/certificate/b1956ef4-b9e1-4820-ba40-e2d1163e9068", category: "Qualidade de Software" },
+  { title: "BDD e Java: Behavior Driven Development com Cucumber", date: "10/2022", issuer: "Alura", link: "https://cursos.alura.com.br/certificate/b1956ef4-ba40-e2d1163e9068", category: "Qualidade de Software" },
   { title: "Gerenciamento de qualidade de software parte 1: o documento MDS", date: "09/2022", issuer: "Alura", link: "https://cursos.alura.com.br/certificate/9e370fee-fc12-4a07-917a-302b048019b3", category: "Qualidade de Software" },
   { title: "Fundamentos Quality Assurance: TestPlan e boas práticas", date: "06/2021", issuer: "Alura", link: "https://cursos.alura.com.br/certificate/48e29980-9af3-4ba1-b2fa-0a7bbae60793", category: "Qualidade de Software" },
 
@@ -96,5 +106,7 @@ export const TECH_STACK = {
   languages: ["C#", "JavaScript", "Python", "Java", "SQL", "HTML/CSS"],
   automation: ["Selenium", "Cypress", "Appium", "Cucumber", "Gherkin"],
   devops: ["GitLab CI", "GitHub Actions", "Azure DevOps", "Git"],
-  agile: ["Jira", "Scrum", "Kanban", "Redmine"]
+  agile: ["Jira", "Scrum", "Kanban", "Redmine"],
+  ai: ["ChatGPT", "Engenharia de Prompt", "IA Generativa", "GitHub Copilot"],
+  leadership: ["Liderança de Times", "Comunicação", "Feedback", "Gestão Ágil"]
 };

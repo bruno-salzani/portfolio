@@ -4,7 +4,7 @@ import { TECH_STACK } from '../constants';
 
 export const Skills: React.FC = () => {
   const SkillCard = ({ title, items, colorClass, icon }: { title: string, items: string[], colorClass: string, icon: string }) => (
-    <div className="glass p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500 group card-gradient">
+    <div className="glass p-8 rounded-3xl hover:translate-y-[-8px] transition-all duration-500 group card-gradient h-full">
       <div className={`w-12 h-12 rounded-2xl bg-slate-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${colorClass}`}>
         <i className={`ph ${icon} text-2xl`}></i>
       </div>
@@ -23,7 +23,7 @@ export const Skills: React.FC = () => {
   );
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <SkillCard 
         title="Linguagens" 
         items={TECH_STACK.languages} 
@@ -37,6 +37,12 @@ export const Skills: React.FC = () => {
         icon="ph-robot"
       />
       <SkillCard 
+        title="IA & Produtividade" 
+        items={TECH_STACK.ai} 
+        colorClass="text-cyan-400" 
+        icon="ph-sparkle"
+      />
+      <SkillCard 
         title="CI/CD & DevOps" 
         items={TECH_STACK.devops} 
         colorClass="text-green-400" 
@@ -47,6 +53,12 @@ export const Skills: React.FC = () => {
         items={TECH_STACK.agile} 
         colorClass="text-orange-400" 
         icon="ph-users-three"
+      />
+      <SkillCard 
+        title="Interpessoal" 
+        items={TECH_STACK.leadership} 
+        colorClass="text-rose-400" 
+        icon="ph-crown"
       />
     </div>
   );
