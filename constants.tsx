@@ -3,7 +3,6 @@ import { Project, Certification } from './types';
 
 export const PROJECTS: Project[] = [
   // 2026
-  { title: "IgniTale - Desenvolvimento de Jogos", date: "02/2026", link: "https://github.com/bruno-salzani/ignitale", category: "Other" },
   { title: "Automação Mobile - Appium/Cucumber JS (Helios APP DETRAN)", date: "01/2026", link: "https://github.com/bruno-salzani/helios-appium-automation/tree/main", category: "QA" },
   { title: "SentinelKit - Cibersegurança", date: "01/2026", link: "https://github.com/bruno-salzani/SentinelKit/tree/main", category: "Other" },
   

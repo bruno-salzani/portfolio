@@ -2,23 +2,6 @@
 import React from 'react';
 
 export const Hero: React.FC = () => {
-  const scrollToProjects = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const element = document.getElementById('projects');
-    if (element) {
-      const offset = 80; // Compensação para o header fixo
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
     <section className="relative min-h-screen flex flex-col justify-center pt-24 pb-16 px-4 overflow-hidden" aria-label="Introdução">
       {/* Elementos de Fundo com Blur Dinâmico */}
@@ -56,12 +39,14 @@ export const Hero: React.FC = () => {
               CONECTAR
             </a>
             <a 
-              href="#projects" 
-              onClick={scrollToProjects}
+              href="./curriculo.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-3 px-8 py-4 bg-transparent border border-white/10 text-white rounded-2xl font-black transition-all hover:bg-white/5 hover:border-white/20 active:scale-95"
+              title="Visualizar currículo de Bruno Salzani"
             >
-              <i className="ph ph-arrow-down text-xl group-hover:translate-y-1 transition-transform"></i>
-              VER PROJETOS
+              <i className="ph ph-file-pdf text-xl group-hover:scale-110 transition-transform"></i>
+              VER CURRÍCULO
             </a>
           </div>
           
