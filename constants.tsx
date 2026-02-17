@@ -3,7 +3,13 @@ import { Project, Certification } from './types';
 
 export const PROJECTS: Project[] = [
   // 2026
-  { title: "Automação Mobile - Appium/Cucumber JS (Helios APP DETRAN)", date: "01/2026", link: "https://github.com/bruno-salzani/helios-appium-automation/tree/main", category: "QA" },
+  { 
+    title: "AeroMaintain Pro ✈️", 
+    date: "02/2026", 
+    link: "https://github.com/bruno-salzani/aeromaintain-pro/tree/main", 
+    category: "Web",
+    description: "Sistema Integrado de Gestão de Manutenção Aeronáutica e Diário de Bordo Digital. Uma solução Full Stack robusta para conformidade regulatória (ANAC), gestão de aeronaves e auditoria de manutenção, desenvolvida com foco em segurança, escalabilidade e experiência do usuário."
+  },
   { title: "SentinelKit - Cibersegurança", date: "01/2026", link: "https://github.com/bruno-salzani/SentinelKit/tree/main", category: "Other" },
   
   // 2025
