@@ -1,5 +1,5 @@
 
-import { Project, Certification } from './types';
+import { Project, Certification, Experience } from './types';
 
 export const PROJECTS: Project[] = [
   // 2026
@@ -112,6 +112,41 @@ export const TECH_STACK = {
   automation: ["Selenium", "Cypress", "Appium", "Cucumber", "Gherkin"],
   devops: ["GitLab CI", "GitHub Actions", "Azure DevOps", "Git"],
   agile: ["Jira", "Scrum", "Kanban", "Redmine"],
-  ai: ["ChatGPT", "Engenharia de Prompt", "IA Generativa", "GitHub Copilot"],
+  ai: ["Desenvolvedor IA Generativa", "ChatGPT", "Engenharia de Prompt", "IA Generativa", "GitHub Copilot"],
   leadership: ["Liderança de Times", "Comunicação", "Feedback", "Gestão Ágil"]
 };
+
+export const EXPERIENCES: Experience[] = [
+  {
+    role: "Analista de teste/QA",
+    company: "AUREA PHIGITAL",
+    type: "Tempo integral",
+    period: "fev de 2025 - o momento",
+    duration: "1 ano 1 mês",
+    location: "Belém, Pará, Brasil · Remota",
+    description: [
+      "Arquitetura de Automação Mobile (Projeto Helios): Liderei o desenvolvimento do framework de automação mobile utilizando Appium, estruturando testes funcionais e de regressão para garantir a estabilidade das entregas em dispositivos Android e iOS.",
+      "Engenharia de Testes E2E (Projeto Uranus): Desenvolvi e mantive uma robusta suíte de testes ponta a ponta utilizando Cypress com JavaScript e Cucumber (BDD). Implementei padrões de design como Page Objects (POM) para aumentar a manutenibilidade do código e reduzir o flakiness dos testes.",
+      "Otimização de Cobertura e Qualidade (Artemis & Uranus): Expandi a cobertura de testes unitários nos projetos Uranus e Artemis em mais de 70%, reduzindo drasticamente a incidência de bugs em produção e acelerando o ciclo de feedback para o time de desenvolvimento.",
+      "Integração Contínua (CI/CD): Responsável pela integração dos testes automatizados nas pipelines de GitLab CI e GitHub Actions. Configurei relatórios dinâmicos com Allure Reports para fornecer visibilidade em tempo real sobre a saúde dos projetos para os stakeholders.",
+      "Gestão de Processos de Qualidade: Atuei no planejamento estratégico de testes, definindo métricas de qualidade e KPIs orientados a dados para impulsionar a maturidade do processo de desenvolvimento (Shift-left testing)."
+    ]
+  },
+  {
+    role: "Analista de teste/QA",
+    company: "INSPAND",
+    type: "Tempo integral",
+    period: "jun de 2018 - mai de 2024",
+    duration: "6 anos",
+    location: "Campinas, São Paulo, Brasil · Híbrida",
+    description: [
+      "Testes Funcionais: Desenvolvi e executei planos de testes abrangentes para aplicações Web e Mobile, aplicando metodologias como Testes Baseados em Requisitos e BDD.",
+      "Testes de Integração: Realizei testes de integração com ferramentas como Postman e SoapUI, garantindo a perfeita interação entre os componentes do sistema.",
+      "Automação de Testes: Criei e executei testes automatizados para aplicações Web utilizando Cypress e Selenium, com versionamento de código via Git.",
+      "Testes de Desempenho: Conduzi testes de desempenho utilizando JMeter e Google Lighthouse, otimizando a estabilidade e eficiência das aplicações.",
+      "Gerenciamento de Defeitos: Reportei e gerenciei defeitos utilizando Jira e Redmine, assegurando uma resolução eficiente e contribuindo para a melhoria contínua dos processos de qualidade.",
+      "Analise de Requisitos: Colaborei com o Product Owner e Analista de Requisitos para refinar escopos de projeto, garantindo que todos os requisitos fossem compreendidos e corretamente implementados, identificando possíveis bugs e inconsistências.",
+      "Liderança de Equipe: Recrutei e treinei novos membros da equipe de Qualidade, delegando tarefas e acompanhando o progresso das demandas para garantir entregas dentro do prazo e com alta qualidade."
+    ]
+  }
+];

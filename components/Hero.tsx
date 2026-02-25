@@ -27,26 +27,36 @@ export const Hero: React.FC = () => {
             Olá, sou <span className="text-white font-bold">Bruno Salzani</span>. Ajudo empresas a entregarem softwares impecáveis através de automação estratégica e desenvolvimento robusto.
           </p>
 
-          <div className="flex flex-wrap justify-center lg:justify-start gap-5 w-full animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-3 w-full animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500">
+            <a 
+              href="https://github.com/bruno-salzani/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 px-5 py-3 bg-[#1f1f23] text-white border border-white/10 rounded-xl text-sm font-bold transition-all hover:scale-105 active:scale-95 shadow-xl hover:bg-[#2d2d35] hover:border-white/20"
+              title="Ver perfil no GitHub"
+            >
+              <i className="ph ph-github-logo text-xl"></i>
+              GITHUB
+            </a>
             <a 
               href="https://www.linkedin.com/in/brunosalzani" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-8 py-4 bg-white text-black rounded-2xl font-black transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-white/10"
-              title="Conectar com Bruno Salzani no LinkedIn"
+              className="group flex items-center gap-2 px-5 py-3 bg-white text-black rounded-xl text-sm font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-white/5"
+              title="Conectar no LinkedIn"
             >
-              <i className="ph ph-linkedin-logo text-2xl"></i>
-              CONECTAR
+              <i className="ph ph-linkedin-logo text-xl"></i>
+              LINKEDIN
             </a>
             <a 
               href="./curriculo.pdf" 
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-8 py-4 bg-transparent border border-white/10 text-white rounded-2xl font-black transition-all hover:bg-white/5 hover:border-white/20 active:scale-95"
-              title="Visualizar currículo de Bruno Salzani"
+              className="group flex items-center gap-2 px-5 py-3 bg-transparent border border-white/10 text-white rounded-xl text-sm font-bold transition-all hover:bg-white/5 hover:border-white/20 active:scale-95"
+              title="Baixar currículo"
             >
               <i className="ph ph-file-pdf text-xl group-hover:scale-110 transition-transform"></i>
-              VER CURRÍCULO
+              CURRÍCULO
             </a>
           </div>
           

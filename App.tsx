@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Hero } from './components/Hero';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
+import { Experience } from './components/Experience';
 import { Certifications } from './components/Certifications';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -46,7 +47,18 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        <section id="certifications" className="py-24 px-4 scroll-mt-24">
+        <section id="experience" className="py-24 px-4 scroll-mt-24">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex flex-col items-center mb-16">
+              <span className="text-blue-500 font-bold text-xs uppercase tracking-[0.3em] mb-4">Trajetória</span>
+              <h2 className="text-4xl md:text-5xl font-black text-center gradient-text">Experiência Profissional</h2>
+            </div>
+            <Experience />
+          </div>
+        </section>
+
+        <section id="certifications" className="py-24 px-4 bg-[#0a0a0c] scroll-mt-24 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent"></div>
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center mb-16">
               <span className="text-green-500 font-bold text-xs uppercase tracking-[0.3em] mb-4">Educação</span>

@@ -60,6 +60,13 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             Projetos
           </a>
           <a 
+            href="#experience" 
+            onClick={(e) => handleScroll(e, 'experience')}
+            className="px-4 py-2 hover:text-white transition-colors rounded-xl hover:bg-white/5"
+          >
+            Experiência
+          </a>
+          <a 
             href="#certifications" 
             onClick={(e) => handleScroll(e, 'certifications')}
             className="px-4 py-2 hover:text-white transition-colors rounded-xl hover:bg-white/5"
@@ -67,6 +74,15 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             Certificações
           </a>
           <div className="w-[1px] h-6 bg-slate-800 mx-2" aria-hidden="true"></div>
+          <a 
+            href="https://github.com/bruno-salzani/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2.5 text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all"
+            aria-label="Ver perfil no GitHub"
+          >
+            <i className="ph ph-github-logo text-2xl"></i>
+          </a>
           <a 
             href="https://wa.me/5519987096082" 
             target="_blank"
