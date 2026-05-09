@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
           </h1>
           
           <p className="max-w-xl text-lg md:text-xl text-slate-400 mb-12 leading-relaxed animate-in fade-in slide-in-from-left-4 duration-1000 delay-300 font-medium">
-            {t('hero.description').replace('{name}', 'Bruno Salzani').replace('{tools}', 'Cypress, Selenium & Appium')}
+            {t('hero.description')}
           </p>
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-4 w-full animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500">
